@@ -92,9 +92,7 @@ def train_main():
     content_image=content_image.to(device)
     style_image=style_image.to(device)
     ## 노이즈 이미지에서 시작하는 경우
-    ###x=torch.randn(1,3,512,512).to(device)
-    ## 컨텐츠 이미지에서 시작하는 경우
-    x=content_image.clone()
+    x=torch.randn(1,3,512,512).to(device)
     x.requires_grad_(True)
     
 
@@ -135,7 +133,7 @@ def train_main():
     optimizer=optim.LBFGS([x],lr=lr)
 
     #train loop설정하기
-    steps=301 # LBFGS는 수렴속도가 빠름
+    steps=201 # LBFGS는 수렴속도가 빠름
     for step in tqdm(range(steps)):
         ##content represenation (x, content_image)
         ##style representaion (x, style_image)
