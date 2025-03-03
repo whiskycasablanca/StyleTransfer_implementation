@@ -77,9 +77,9 @@ def train_main():
     #하이퍼파라미터
     alpha=1  #각 로스의 비율
     beta=1e6
-    lr=0.1
+    lr=1 # pytorch tutorial을 참고하여 수정
 
-    save_root= f'{alpha}_{beta}_{lr}'
+    save_root= f'{alpha}_{beta}_{lr}_LBFGS'
     # save_root= f'{alpha}_{beta}_{lr}'
     os.makedirs(save_root, exist_ok=True)
 
@@ -100,15 +100,12 @@ def train_main():
 
     #옵티마이저 설정하기
     
-    optimizer=optim.Adam([x],lr=lr)
-
-    #train loop설정하기
-    steps=1000
-    for step in tqdm(range(steps)):
-        ##content represenation (x, content_image)
-        ##style representaion (x, style_image)
-
-        #아웃풋이 피처맵의 리스트니까
+    #closure
+    def closure():
+        #gradient 계산
+        #return loss 하나
+         #아웃풋이 피처맵의 리스트니까
+        optimizer.zero_grad()
         x_content_list= style_transfer(x,'content') 
         y_content_list= style_transfer(content_image,'content')
 
@@ -130,20 +127,57 @@ def train_main():
         loss_s=beta*loss_s
 
         loss_total=loss_c + loss_s
+        loss_total.backward()
+
+        return loss_total
+
+        pass
+    optimizer=optim.LBFGS([x],lr=lr)
+
+    #train loop설정하기
+    steps=301
+    for step in tqdm(range(steps)):
+        ##content represenation (x, content_image)
+        ##style representaion (x, style_image)
+
+       
     
         ## optimizer step
-        optimizer.zero_grad()
-        loss_total.backward()
-        optimizer.step()
+       
+        optimizer.step(closure)
 
         if step%100==0:
-            print(f"loss_c: {loss_c.cpu()}")
-            print(f"loss_s: {loss_s.cpu()}")
-            print(f"loss_total: {loss_total.cpu()}")
+            with torch.no_grad():
 
-            gen_img:Image.Image= post_processing(x)
-            #운영체제에 맞게 경로 만들어주기-save_root 밑으로 들어감
-            gen_img.save(os.path.join(save_root, f'{step}.jpg'))
+                x_content_list= style_transfer(x,'content') 
+                y_content_list= style_transfer(content_image,'content')
+
+                x_style_list= style_transfer(x,'style') 
+                y_style_list= style_transfer(style_image,'style')
+                
+                ##loss_content, loss_style
+                loss_c=0
+                loss_s=0
+                loss_total=0
+
+                #style의 features는 5개 content는 1개
+                for x_content, y_content in zip(x_content_list, y_content_list):
+                    loss_c+=content_loss(x_content,y_content)
+                loss_c=alpha*loss_c
+
+                for x_style, y_style in zip(x_style_list, y_style_list):
+                    loss_s+=style_loss(x_style,y_style)
+                loss_s=beta*loss_s
+
+                loss_total=loss_c + loss_s
+
+                print(f"loss_c: {loss_c.cpu()}")
+                print(f"loss_s: {loss_s.cpu()}")
+                print(f"loss_total: {loss_total.cpu()}")
+
+                gen_img:Image.Image= post_processing(x)
+                #운영체제에 맞게 경로 만들어주기-save_root 밑으로 들어감
+                gen_img.save(os.path.join(save_root, f'{step}.jpg'))
 
         ## loss 출력하기
         print(loss_c)
