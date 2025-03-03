@@ -135,7 +135,7 @@ def train_main():
     optimizer=optim.LBFGS([x],lr=lr)
 
     #train loop설정하기
-    steps=301
+    steps=301 # LBFGS는 수렴속도가 빠름
     for step in tqdm(range(steps)):
         ##content represenation (x, content_image)
         ##style representaion (x, style_image)
