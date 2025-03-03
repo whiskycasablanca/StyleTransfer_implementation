@@ -57,11 +57,11 @@ def post_processing(tensor:torch.Tensor)-> Image.Image:
 
 def train_main():
 #이미지 불러오기(평소에는 데이터셋)
-    content_image=Image.open('./content.jpg')
+    content_image=Image.open('./content_disastergirl.jpg')
     content_image=pre_processing(content_image)
 
     #style_image=Image.open('./style.jpg')
-    style_image=Image.open('./style2.jpg')
+    style_image=Image.open('./style_hockney.jpg')
     style_image=pre_processing(style_image)
 
 
@@ -79,7 +79,7 @@ def train_main():
     beta=1e6
     lr=0.1
 
-    save_root= f'{alpha}_{beta}_{lr}_style2'
+    save_root= f'{alpha}_{beta}_{lr}'
     # save_root= f'{alpha}_{beta}_{lr}'
     os.makedirs(save_root, exist_ok=True)
 
