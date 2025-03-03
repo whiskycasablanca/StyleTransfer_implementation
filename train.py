@@ -127,7 +127,7 @@ def train_main():
 
         for x_style, y_style in zip(x_style_list, y_style_list):
             loss_c+=style_loss(x_style,y_style)
-        loss_s=beta*loss_c
+        loss_s=beta*loss_s
 
         loss_total=loss_c + loss_s
     
