@@ -92,7 +92,7 @@ def train_main():
     content_image=content_image.to(device)
     syle_image=style_image.to(device)
     ## 노이즈 이미지에서 시작하는 경우
-    #x=torch.randn(1,3,512,512).to(device)
+    ###x=torch.randn(1,3,512,512).to(device)
     ## 컨텐츠 이미지에서 시작하는 경우
     x=content_image.clone()
     x.requires_grad_(True)
@@ -113,7 +113,7 @@ def train_main():
         y_content_list= style_transfer(content_image,'content')
 
         x_style_list= style_transfer(x,'style') 
-        y_style_list= style_transfer(content_image,'style')
+        y_style_list= style_transfer(style_image,'style')
         
         ##loss_content, loss_style
         loss_c=0
