@@ -13,11 +13,17 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 ## 📂 Repository Structure
 
 📦 StyleTransfer_Implementation
+
 ┣ 📜 [README.md](http://readme.md/)                # Project documentation
+
 ┣ 📜 content_disastergirl.jpg # Content image
+
 ┣ 📜 style_hockney.jpg        # Style image
+
 ┣ 📜 [loss.py](http://loss.py/)                  # Defines loss functions (content loss, style loss, etc.)
+
 ┣ 📜 [models.py](http://models.py/)                # Defines the neural network architecture (VGG-19 based)
+
 ┣ 📜 [train.py](http://train.py/)                 # Training script for style transfer
 
 
