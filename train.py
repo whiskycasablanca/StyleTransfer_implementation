@@ -103,7 +103,7 @@ def train_main():
     optimizer=optim.Adam([x],lr=lr)
 
     #train loop설정하기
-    steps=1000
+    steps=901
     for step in tqdm(range(steps)):
         ##content represenation (x, content_image)
         ##style representaion (x, style_image)
