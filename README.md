@@ -33,7 +33,7 @@ Below are the final results of the Adam and L-BFGS optimizers with different ini
 
 For the content image, I used the famous meme Disaster Girl(2005), and for the style image, I chose Portrait of an Artist(1973) by David Hockney.
 
-![Disaster Girl](/content_disaster_girl.jpg)
+![Disaster Girl](/content_disastergirl.jpg)
 
 ![Portrait of an Artist](/style_hockney.jpg)  
 
