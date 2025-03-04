@@ -1,0 +1,20 @@
+# 🛑 macOS 시스템 파일 제외
+.DS_Store
+
+# 🛑 Python 캐시 파일 제외
+__pycache__/
+*.pyc
+
+# 🛑 가상 환경 폴더 제외 (venv, virtualenv 등)
+venv/
+env/
+
+# 🛑 로그 파일 & 환경 설정 파일 제외
+*.log
+.env
+
+# 🛑 생성된 이미지 파일 제외 (원본만 유지)
+results/
+
+# 🛑 Jupyter Notebook 체크포인트 제외
+.ipynb_checkpoints/
