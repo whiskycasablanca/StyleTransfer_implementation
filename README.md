@@ -47,7 +47,7 @@ Below are the images used for style transfer.
   </tr>
 </table>
 
-### 🔹 Adam Optimizer (Learning Rate: 1e-1)
+### 🔹 Adam Optimizer (Learning Rate: 1e-1, epoch 900)
 
 
 <img src="results/DisasterGirl_Adam900_C-Init.png" width="350">
@@ -59,7 +59,7 @@ Total Loss: **3.36**
 
 ---
 
-### 🔹 L-BFGS Optimizer (Content Image Initialization, Learning Rate: 1)
+### 🔹 L-BFGS Optimizer (Content Image Initialization, Learning Rate: 1, epoch 200)
 
 
 <img src="results/DisasterGirl_LBFGS200_C-Init.png" width="350">
@@ -70,7 +70,7 @@ Total Loss: **2.18**
 
 ---
 
-### 🔹 L-BFGS Optimizer (Random Initialization, Learning Rate: 1)
+### 🔹 L-BFGS Optimizer (Random Initialization, Learning Rate: 1, epoch 200)
 
 <img src="results/DisasterGirl_LBFGS200_R-Init.png" width="350">
 
