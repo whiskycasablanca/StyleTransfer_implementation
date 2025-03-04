@@ -49,9 +49,11 @@ Below are the images used for style transfer.
 
 ### 🔹 Adam Optimizer (Learning Rate: 1e-1)
 
-![](results/result_adam.jpg)
+![](results/DisasterGirl_Adam900_C-Init.png)
 
-Final Loss: **45.67**
+Content Loss: 1.51
+Style Loss: 1.85
+Total Loss: **3.36**
 
 ---
 
