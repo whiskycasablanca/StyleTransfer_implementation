@@ -29,7 +29,14 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 
 ## 🖼️ Style Transfer Results
 
-Below are the final results of **Adam** and **L-BFGS** optimizers with different initialization strategies.
+Below are the final results of the Adam and L-BFGS optimizers with different initialization strategies. 
+
+For the content image, I used the famous meme Disaster Girl(2005), and for the style image, I chose Portrait of an Artist(1973) by David Hockney.
+
+![Disaster Girl](/content_disaster_girl.jpg)
+
+![Portrait of an Artist](/style_hockney.jpg)  
+
 
 ### 🔹 Adam Optimizer (Learning Rate: 1e-1)
 
