@@ -51,25 +51,31 @@ Below are the images used for style transfer.
 
 ![](results/DisasterGirl_Adam900_C-Init.png)
 
-Content Loss: 1.51
-Style Loss: 1.85
+Content Loss: **1.51**
+Style Loss: **1.85**
 Total Loss: **3.36**
 
 ---
 
 ### 🔹 L-BFGS Optimizer (Content Image Initialization, Learning Rate: 1)
 
-![](results/result_lbfgs_content.jpg)
+![](results/DisasterGirl_LBFGS200_C-Init.png)
 
-Final Loss: **28.34**
+
+Content Loss: **1.30**
+Style Loss: **0.88**
+Total Loss: **2.18**
 
 ---
 
 ### 🔹 L-BFGS Optimizer (Random Initialization, Learning Rate: 1)
 
-![](results/result_lbfgs_random.jpg)
+![](results/DisasterGirl_LBFGS200_R-Init.png)
 
-Final Loss: **30.12**
+Content Loss: **1.43**
+Style Loss: **0.86**
+Total Loss: **2.34**
+
 
 ---
 
