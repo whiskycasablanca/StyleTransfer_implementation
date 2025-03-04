@@ -47,11 +47,6 @@ Below are the images used for style transfer.
   </tr>
 </table>
 
-![Disaster Girl](/content_disastergirl.jpg)
-
-![Portrait of an Artist](/style_hockney.jpg)  
-
-
 ### 🔹 Adam Optimizer (Learning Rate: 1e-1)
 
 ![](results/result_adam.jpg)
