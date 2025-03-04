@@ -48,7 +48,16 @@ Below are the images used for style transfer.
   </tr>
 </table>
 
-### 🔹 Adam Optimizer (Learning Rate: 1e-1, epoch 900)
+### 🔹 Adam Optimizer ((Random Initialization, Learning Rate: 1e-1, epoch 900)
+
+<img src="results/DisasterGirl_Adam900_R-Init.png" width="350">
+
+Content Loss: **2.82**
+Style Loss: **3.21**
+Total Loss: **6.03**
+
+
+### 🔹 Adam Optimizer (Content Image Initialization, Learning Rate: 1e-1, epoch 900)
 
 
 <img src="results/DisasterGirl_Adam900_C-Init.png" width="350">
@@ -87,3 +96,10 @@ Total Loss: **2.34**
 - **L-BFGS converges faster** than Adam, achieving a lower final loss.
 - **Content image initialization for L-BFGS** results in a **more stable** and structured stylization.
 - **Random initialization with L-BFGS** sometimes produces better artistic effects but can be **unstable**.
+- **Using the content image for initialization significantly speeds up convergence**, reducing the number of optimization steps needed.
+- **Content image initialization also leads to a lower final loss**, indicating that the optimization process finds a better solution compared to random initialization.
+
+
+### 🔗 **References**
+- **Paper:** *A Neural Algorithm of Artistic Style*, Gatys et al., 2015  
+- **Lecture:** *Neural Style Transfer Implementation*, [[AI 실무] AI Research Engineer를 위한 논문 구현 시작하기 with PyTorch] by [화이트박스]  
