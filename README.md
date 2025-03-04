@@ -51,6 +51,9 @@ Below are the images used for style transfer.
 
 ![](results/DisasterGirl_Adam900_C-Init.png)
 
+<img src="results/DisasterGirl_Adam900_C-Init.png" width="500">
+  
+
 Content Loss: **1.51**
 Style Loss: **1.85**
 Total Loss: **3.36**
