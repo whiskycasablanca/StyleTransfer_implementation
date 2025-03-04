@@ -92,9 +92,9 @@ def train_main():
     content_image=content_image.to(device)
     style_image=style_image.to(device)
     ## 노이즈 이미지에서 시작하는 경우
-    ###x=torch.randn(1,3,512,512).to(device)
+    x=torch.randn(1,3,512,512).to(device)
     ## 컨텐츠 이미지에서 시작하는 경우
-    x=content_image.clone()
+    ###x=content_image.clone()
     x.requires_grad_(True)
     
 
