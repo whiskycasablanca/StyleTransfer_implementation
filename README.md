@@ -33,6 +33,20 @@ Below are the final results of the Adam and L-BFGS optimizers with different ini
 
 For the content image, I used the famous meme Disaster Girl(2005), and for the style image, I chose Portrait of an Artist(1973) by David Hockney.
 
+## 🖼️ Content & Style Images  
+Below are the images used for style transfer.  
+
+<table>
+  <tr>
+    <td><b>Content Image (Disaster Girl)</b></td>
+    <td><b>Style Image (Portrait of an Artist)</b></td>
+  </tr>
+  <tr>
+    <td><img src="content_disastergirl.jpg" width="400"></td>
+    <td><img src="style_hockney.jpg" width="400"></td>
+  </tr>
+</table>
+
 ![Disaster Girl](/content_disastergirl.jpg)
 
 ![Portrait of an Artist](/style_hockney.jpg)  
