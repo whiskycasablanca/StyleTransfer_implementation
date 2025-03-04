@@ -91,7 +91,7 @@ Total Loss: **2.34**
 
 ---
 
-### 🔬 **Observations**
+## 🔬 **Observations**
 
 - **L-BFGS converges faster** than Adam, achieving a lower final loss.
 - **Content image initialization for L-BFGS** results in a **more stable** and structured stylization.
@@ -100,6 +100,6 @@ Total Loss: **2.34**
 - **Content image initialization also leads to a lower final loss**, indicating that the optimization process finds a better solution compared to random initialization.
 
 
-### 🔗 **References**
+## 🔗 **References**
 - **Paper:** *A Neural Algorithm of Artistic Style*, Gatys et al., 2015  
 - **Lecture:** *Neural Style Transfer Implementation*, [[AI 실무] AI Research Engineer를 위한 논문 구현 시작하기 with PyTorch] by [화이트박스]  
