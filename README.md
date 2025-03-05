@@ -26,7 +26,7 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 
 ┣ 📜 [train.py](http://train.py/)                 # Training script for style transfer
 
-## Implementation Details
+## ✏️ Implementation Details
 
 ### models.py
 This file contains the main architecture for extracting style and content features using a pre-trained VGG19 model. Below is a brief overview:
@@ -41,6 +41,32 @@ This file contains the main architecture for extracting style and content featur
   Receives an input tensor `x` and a mode (`"style"` or `"content"`), passes `x` through each layer, and collects style or content features for later use in the style transfer process.
 
 
+### loss.py
+This file defines the loss functions used to measure how closely the generated image matches the content and style targets. Below is a brief overview:
+
+- **ContentLoss Class**  
+  Calculates the mean squared error (`F.mse_loss`) between the feature representations of the generated image and the content image. This ensures the generated image retains the structural integrity of the content.
+
+- **StyleLoss Class**  
+  Uses a Gram matrix representation to compute style similarity. The `gram_matrix` function transforms feature maps, and the loss is the mean squared error between these Gram matrices of the generated and style images.
+
+---
+
+### train.py
+This file orchestrates the entire style transfer process, from loading images to running the optimization loop. Below is a brief overview:
+
+
+- **Data Preprocessing and Postprocessing**  
+  - **`pre_processing(image)`** resizes and normalizes the input image, converting it to a Tensor ready for the model.  
+  - **`post_processing(tensor)`** converts the output Tensor back to a PIL image, reversing normalization and adjusting pixel values.
+
+- **Training Routine**  
+  - **`train_main()`** loads content and style images, sets up the `StyleTransfer` model, and initializes the optimizer (e.g., `LBFGS`).  
+  - A closure function calculates the total loss (content + style), backpropagates, and updates the generated image `x`.  
+  - Saves intermediate outputs periodically and prints the current loss values.
+
+- **Execution**  
+  When the file is run directly (`if __name__ == "__main__":`), the `train_main()` function is called to perform style transfer and save the results.
 
 
 ## 🖼️ Style Transfer Results
