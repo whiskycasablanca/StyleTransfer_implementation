@@ -9,6 +9,7 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 - Uses **VGG-19** as the feature extractor
 - Custom loss functions (`loss.py`), model definitions (`models.py`), and training script (`train.py`)
 - 
+  
 
 ## 📂 Repository Structure
 
@@ -26,6 +27,8 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 
 ┣ 📜 [train.py](http://train.py/)                 # Training script for style transfer
 
+
+
 ## ✏️ Implementation Details
 
 ### models.py
@@ -40,6 +43,7 @@ This file contains the main architecture for extracting style and content featur
 - **forward Method**  
   Receives an input tensor `x` and a mode (`"style"` or `"content"`), passes `x` through each layer, and collects style or content features for later use in the style transfer process.
 
+---
 
 ### loss.py
 This file defines the loss functions used to measure how closely the generated image matches the content and style targets. Below is a brief overview:
