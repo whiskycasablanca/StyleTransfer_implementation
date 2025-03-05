@@ -26,6 +26,21 @@ This repository implements **Neural Style Transfer**, based on **"A Neural Algor
 
 ┣ 📜 [train.py](http://train.py/)                 # Training script for style transfer
 
+## Implementation Details
+
+### models.py
+This file contains the main architecture for extracting style and content features using a pre-trained VGG19 model. Below is a brief overview:
+
+- **Imports and Layer Map**  
+  `torch` and `torch.nn` are used for PyTorch-based operations and module definitions. The `vgg19` from `torchvision.models` provides the pretrained VGG19 network. The `conv` dictionary maps layer names (e.g., `conv1_1`, `conv4_2`) to indices in the VGG19 feature extractor.
+
+- **StyleTransfer Class**  
+  Inherits from `nn.Module`, initializes a pre-trained VGG19 model, and stores the indices of layers required for style and content extraction.
+
+- **forward Method**  
+  Receives an input tensor `x` and a mode (`"style"` or `"content"`), passes `x` through each layer, and collects style or content features for later use in the style transfer process.
+
+
 
 
 ## 🖼️ Style Transfer Results
@@ -102,4 +117,4 @@ Total Loss: **2.34**
 
 ## 🔗 **References**
 - **Paper:** *A Neural Algorithm of Artistic Style*, Gatys et al., 2015  
-- **Lecture:** *Neural Style Transfer Implementation*, [[AI 실무] AI Research Engineer를 위한 논문 구현 시작하기 with PyTorch] by [화이트박스]  
+- **Lecture:** *Neural Style Transfer Implementation*, [AI Research Engineer를 위한 논문 구현 시작하기 with PyTorch] by [화이트박스]  
